@@ -10,13 +10,18 @@ public class TopDownCharacterMover : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private bool rotateTowardsMouse;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject firePoint;
     private void Awake()
     {
         input = GetComponent<InputHandler>();
+        firePoint = GameObject.Find("FirePoint");
+        Debug.Log(firePoint.transform.position);
     }
 
     private void Update()
     {
+        //Grab target vector based on input x and y value. Set to x and z for player
         var targetVector = new Vector3(input.InputVector.x, 0, input.InputVector.y);
 
         //Move in the direction we are aiming
@@ -31,6 +36,8 @@ public class TopDownCharacterMover : MonoBehaviour
         {
             RotateTowardMouseVector();
         }
+
+        FireProjectile();
         
     }
 
@@ -61,5 +68,13 @@ public class TopDownCharacterMover : MonoBehaviour
         var targetPosition = transform.position + targetVector * speed;
         transform.position = targetPosition;
         return targetVector;
+    }
+
+    private void FireProjectile()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(projectile, firePoint.transform.position, transform.rotation);
+        }
     }
 }
