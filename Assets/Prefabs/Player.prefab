@@ -141,9 +141,8 @@ GameObject:
   - component: {fileID: 7421746597142035006}
   - component: {fileID: 694595294711961775}
   - component: {fileID: 7339273201522310763}
-  - component: {fileID: 2970807283456308103}
   - component: {fileID: 785070192082108911}
-  - component: {fileID: 785070192082108913}
+  - component: {fileID: 785070192082108910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -231,22 +230,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2970807283456308103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283616353761192654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0748b80bcdec91342b7e393bdb20e604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  camera: {fileID: 0}
-  rotateSpeed: 15
-  rotateTowardsMouse: 1
 --- !u!54 &785070192082108911
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -256,14 +239,14 @@ Rigidbody:
   m_GameObject: {fileID: 283616353761192654}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &785070192082108913
+--- !u!114 &785070192082108910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,6 +255,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 283616353761192654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41c7b9c98f3fd394694e1247de4e274f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fccfdba6843afe45b0bc5342ad7f4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRb: {fileID: 0}
+  speed: 1000
+  maxSpeed: 1000
+  projectile: {fileID: 4422228452296267517, guid: bfda51acd85ee374ca867555aead4685, type: 3}
+  firePoint: {fileID: 186569688414017617}
